@@ -25,7 +25,7 @@ public class ScriptPerso : MonoBehaviour
         time = timeUpScale;      
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         deplacement();
@@ -34,6 +34,7 @@ public class ScriptPerso : MonoBehaviour
        
     }
 
+    //deplacement du joueur qui suis la position du visage
     private void deplacement()
     {
         rectOrigine = new Vector2(DetectionVisage.visagePosOrigine.x, DetectionVisage.visagePosOrigine.y);
@@ -46,6 +47,7 @@ public class ScriptPerso : MonoBehaviour
         transform.position = new Vector3(rectOrigine.x + largeur / 2, -rectOrigine.y - longeur / decaleMoustache, 0);
     }
 
+    //gain de vie et agrendir le sprite avec le temps
     private void upScaleAndLive()
     {
         time -= Time.deltaTime;
@@ -58,6 +60,7 @@ public class ScriptPerso : MonoBehaviour
         }
     }
 
+    //si collision avec ennemie perte de vie du joueur et réduction de la taille
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Ennemi"))

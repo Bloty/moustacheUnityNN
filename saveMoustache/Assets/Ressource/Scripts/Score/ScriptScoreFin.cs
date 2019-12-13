@@ -10,7 +10,6 @@ public class ScriptScoreFin : MonoBehaviour
     public int score;
     public ScriptScore scriptScore;
 
-    // Start is called before the first frame update
     void Start()
     {
         score = scriptScore.score;

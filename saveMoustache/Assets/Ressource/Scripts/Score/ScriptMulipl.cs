@@ -9,16 +9,13 @@ public class ScriptMulipl : MonoBehaviour
     public int multipl = 0;
     public Text multiplText;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
+        //affichage du multipl
         multiplText.text = ("X " + multipl);
+
+        //affectation du multple avec le nombre de point de vie
         multipl = scriptPerso.life;
         
     }

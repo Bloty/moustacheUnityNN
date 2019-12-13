@@ -10,15 +10,11 @@ public class MoveSpawnDG : MonoBehaviour
     private bool isMoving = false;
     private float largeurEcran = 640;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //targetPos = new Vector3(largeurEcran, 0, 0);
-    }
 
-    // Update is called once per frame
     void Update()
     {
+
+        //changement de direction quand le game ob arrive a sa posision
         if(isMoving == false)
         {
             if (transform.position.x == largeurEcran)
@@ -38,6 +34,8 @@ public class MoveSpawnDG : MonoBehaviour
         move();
     }
 
+
+    //deplacement du spawner d'un point A a un point B
     private void move()
     {
         transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);

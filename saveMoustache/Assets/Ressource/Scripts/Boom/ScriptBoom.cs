@@ -10,16 +10,14 @@ public class ScriptBoom : MonoBehaviour
     public float boomDelay;
     public float time = 0;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
 
-    // Update is called once per frame
     void Update()
     {
+
+        //incrementation du timer
         time += Time.deltaTime;
 
+        //activation du sprite
         if (time >= boomDelay)
         {
             boomSprite.SetActive(true);
@@ -29,6 +27,8 @@ public class ScriptBoom : MonoBehaviour
             boomSprite.SetActive(false);
         }
 
+
+        //activation du trigger
         if (scriptMicro.son == true && time >= boomDelay)
         {
             collisionBoom.SetActive(true);

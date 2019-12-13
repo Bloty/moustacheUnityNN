@@ -11,17 +11,17 @@ public class ScriptScore : MonoBehaviour
     public ScriptMulipl scriptMultipl;
     public int multipl;
 
-
-
-
-    // Update is called once per frame
     void Update()
     {
+        //recuperation du multiple
         multipl = scriptMultipl.multipl;
         
+
+        //incrémentation du timer avec le multiplicateur
         time += Time.deltaTime * multipl;
         score = Mathf.RoundToInt(time);
         
+        //affichage du texte
         scoreText.text = ("Score : " + score);
     }
 }
